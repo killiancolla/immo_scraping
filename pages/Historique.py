@@ -13,7 +13,7 @@ streamlit.sidebar()
 key_article = st.selectbox('Choisissez une collect : ', [h['search'] for h in scrap.get_history(ip)])
 database = DataBase('immoDB')
 data = database.select_table("offres", {"place": key_article})
-nb_article = st.slider("Nombre d'offres à afficher ?", 1, len(data))
+nb_article = st.slider("Nombre d'offres à afficher ?", 0, len(data))
 for i in range(nb_article):
     try:
         col1, col2 = st.columns(2)

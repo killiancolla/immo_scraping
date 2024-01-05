@@ -93,20 +93,23 @@ df['postal_code'] = df['place'].apply(extract_postal_code)
 df_sorted = df.sort_values(by='postal_code')
 unique_places = df_sorted['place'].unique()
 
-# city = st.selectbox("Choisissez votre ville", unique_places)
-# nb_article = st.slider("Nombre d'offres à afficher ?", 1, len(data))
+st.write('Recherche dans la base de données')
+city = st.selectbox("Choisissez votre ville", unique_places)
+df_new = database.select_table('offres', {'place': city})
+nb_article = st.slider("Nombre d'offres à afficher ?", 0, len(df_new))
 
-# for i in range(nb_article):
-#     try:
-#         col1, col2 = st.columns(2)
-#         with col1: 
-#             st.image(data[i].image)
-#             st.link_button("Accèder à l'offre", data[i].name)
-#         with col2:
-#             st.write(data[i]['name'])
-#             st.write(data[i].place)
-#             st.write(str(data[i].size) + ' m²')
-#             st.write(str(data[i].price) + '€')
-#             st.write(str(data[i].square_price) + '€/m²')
-#     except:
-#         break
+if nb_article > 0:
+    for i in range(nb_article):
+        try:
+            col1, col2 = st.columns(2)
+            with col1: 
+                st.image(df_new[i].image)
+                st.link_button("Accèder à l'offre", df_new[i].name)
+            with col2:
+                st.write(df_new[i]['name'])
+                st.write(df_new[i].place)
+                st.write(str(df_new[i].size) + ' m²')
+                st.write(str(df_new[i].price) + '€')
+                st.write(str(df_new[i].square_price) + '€/m²')
+        except:
+            break
