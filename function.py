@@ -25,9 +25,11 @@ class DataBase():
         print(f"Table : '{name_table}' are created succesfully")
 
     def read_table(self, name_table, return_keys=False):
-        table = db.Table(name_table, self.metadata, autoload=True, autoload_with=self.engine)
-        if return_keys:table.columns.keys()
-        else : return table
+        table = db.Table(name_table, self.metadata, autoload_with=self.engine)
+        if return_keys:
+            return table.columns.keys()
+        else:
+            return table
 
     def add_row(self, name_table, **kwarrgs):
         name_table = self.read_table(name_table)
