@@ -3,3 +3,4 @@ streamlit
 numpy
 plotly.express
 sqlalchemy
+selenium
