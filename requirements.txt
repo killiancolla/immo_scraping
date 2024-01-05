@@ -2,7 +2,6 @@ pandas
 streamlit
 numpy
 plotly.express
-re
 selenium.webdriver
 time
 sqlalchemy
