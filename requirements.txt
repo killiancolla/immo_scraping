@@ -1,7 +1,6 @@
 pandas
 streamlit
 numpy
-socket
 plotly.express
 re
 selenium.webdriver
