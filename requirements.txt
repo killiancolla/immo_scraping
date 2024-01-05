@@ -1,0 +1,10 @@
+pandas
+streamlit
+numpy
+BytesIO
+socket
+plotly.express
+re
+selenium.webdriver
+time
+sqlalchemy
