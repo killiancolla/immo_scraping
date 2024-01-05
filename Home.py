@@ -18,16 +18,6 @@ st.set_page_config(
 scrap = Scrap()
 streamlit = Streamlit()
 database = DataBase("immoDB")
-database.create_table('offres',
-                id_=db.Integer,
-                link=db.String,
-                image=db.String,
-                name=db.String,
-                place=db.String,
-                size=db.Integer,
-                price=db.Integer,
-                square_price=db.Float
-                )
 
 streamlit.sidebar()
 

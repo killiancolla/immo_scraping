@@ -1,5 +1,4 @@
 pandas
-streamlit
 numpy
 plotly.express
 sqlalchemy

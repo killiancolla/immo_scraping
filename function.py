@@ -5,6 +5,7 @@ import streamlit as st
 import sqlalchemy as db
 from sqlalchemy import and_
 
+
 class DataBase():
     def __init__(self, name_database='database'):
         self.name = name_database
