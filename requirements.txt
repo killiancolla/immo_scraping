@@ -1,7 +1,6 @@
 pandas
 streamlit
 numpy
-io
 socket
 plotly.express
 re
