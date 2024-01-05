@@ -1,5 +1,6 @@
-pandas
-numpy
-plotly.express
-sqlalchemy
-selenium
+numpy==1.26.3
+pandas==2.1.4
+plotly==5.18.0
+selenium==4.16.0
+SQLAlchemy==1.4.40
+streamlit==1.29.0
