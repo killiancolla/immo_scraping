@@ -4,6 +4,8 @@ from time import sleep
 import streamlit as st
 import sqlalchemy as db
 from sqlalchemy import and_
+from sqlalchemy import create_engine
+from sqlalchemy.engine.reflection import Inspector
 
 
 class DataBase():
@@ -13,7 +15,8 @@ class DataBase():
         self.engine = db.create_engine(self.url)
         self.connection = self.engine.connect()
         self.metadata = db.MetaData()
-        self.table = self.engine.table_names()
+        inspector = Inspector.from_engine(self.engine)
+        self.table = inspector.get_table_names()
 
     def create_table(self, name_table, **kwargs):
         colums = [db.Column(k, v, primary_key = True) if 'id_' in k else db.Column(k, v) for k,v in kwargs.items()]
